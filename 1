@@ -1,0 +1,78 @@
+#include "sort.h"
+
+int *do_swap(int *array, int pos1, int pos2);
+
+/**
+ * quick_sort -sorting algoritmh
+ * @array: list array
+ * @size: size array
+ *
+ * Return: none
+ */
+void quick_sort(int *array, size_t size)
+{
+	unsigned long int i, j = 0;
+	unsigned int low, high;
+	int pivot = 0;
+
+	if (size < 2 || !array)
+		return;
+
+	low = 0, high = size - 1;
+
+	keep_sort(array, low, high, size);
+}
+
+void keep_sort(int *array, ssize_t low, ssize_t high, size_t size)
+{
+	ssize_t pivot;
+
+	if (low < high)
+	{
+		pivot = paritition(array. low, high, size);
+	}
+}
+
+ssize_t partition(int *array, ssize_t low, ssize_t high, size_t size)
+{
+	int pivot, tmp;
+	ssize_t i, j;
+
+	pivot = array[high];
+	i = (low - 1);
+
+	for (j = low, j < high; j++)
+	{
+		if (array[j] < pivot)
+		{
+			i++;
+			if (i != j)
+			{
+				tmp = array[i];
+				array[i] = array[j];
+				array[j] = tmp;
+				print_array(array, size);
+			}
+		}
+	}
+
+	
+}
+
+/**
+ * do_swap - change  positions in array
+ * @array: array list
+ * @pos1: position to change
+ * @pos2: position to change
+ *
+ * Return: array pointer
+ */
+int *do_swap(int *array, int pos1, int pos2)
+{
+	int key;
+
+	key  = array[pos1];
+	array[pos1] = array[pos2];
+	array[pos2] = key;
+	return (array);
+}
